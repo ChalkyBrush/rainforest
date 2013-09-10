@@ -2,4 +2,4 @@
 </p>
 <li class="title"><%= @product[:name] %></li>
 <li class="author"><%= @product[:description] %></li>
-<li class="author"><%= @product[:price_in_cents] %></li>
+<li class="author"><%= "$"+@product.formatted_price.to_s %></li>
