@@ -3,9 +3,18 @@
 <% @products.each do |product| %>
 <div class="picturecard">
 <br>
-  <li class="title"><%= product[:name] %></li>
+
+  <li class="title"><%= link_to product[:name], "/products/#{product.id}" %></li>
   <li class ="author"><%= product[:description] %></li>
-  <li class ="author"><%= product[:price_in_cents] %></li>
+  
+
+  <% price_display = ((product[:price_in_cents].to_f)/100).to_s %>
+  	
+   	<% if product[:price_in_cents]%10 == 0 %>
+  	<% price_display = price_display + "0" %>
+  	<% end %>	
+  
+  <li class ="author"><%= "$"+(price_display) %></li>
  </div>
  
 <% end %>
