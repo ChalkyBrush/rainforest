@@ -7,7 +7,7 @@
   <li class="title"><%= link_to product[:name], "/products/#{product.id}" %></li>
   <li class ="author"><%= product[:description] %></li>
   
-  <li class ="author"><%= "$"+product.formatted_price.to_s %></li>
+  <li class ="title"><%= "$"+product.formatted_price.to_s %></li>
  </div>
  
 <% end %>
