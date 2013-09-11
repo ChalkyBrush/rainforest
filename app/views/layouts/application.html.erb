@@ -6,6 +6,8 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+<body>
+
 <div id="container">
 
 <div id="header_bar">
@@ -31,6 +33,12 @@
 
 
 <div id="content">
+		<% if flash[:notice] %>
+      <p id="notice"><%= flash[:notice] %></p>
+    	<% end %>
+    <% if flash[:alert] %>
+      <p id="alert"><%= flash[:alert] %></p>
+    <% end %>
 	<%= yield %>	
 </div>
 
